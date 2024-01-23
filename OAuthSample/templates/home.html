@@ -1,0 +1,9 @@
+{% load socialaccount %}
+
+<h1>Hello, this is Keith OAuth Sample</h1>
+
+{% if request.user.is_authenticated %}    
+    <a href="{% url 'account_logout' %}">button for log out</a>
+{% else %}
+    <a href="{% provider_login_url 'github' %}">Login with github</a>
+{% endif %}
